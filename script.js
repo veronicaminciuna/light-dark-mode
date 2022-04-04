@@ -46,4 +46,15 @@ function switchTheme(event) {
 }
 
 //Event Listener
-toggleSwitch.addEventListener('change', switchTheme)
+toggleSwitch.addEventListener('change', switchTheme);
+
+//check local storage for theme
+const currentTheme = localStorage.getItem('theme');
+if(currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if(currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        darkMode();
+    }
+}
