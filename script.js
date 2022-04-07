@@ -14,12 +14,12 @@ function imageMode(color) {
 }
 
 function toggleDarkLightMode(isDark) {
-    nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' || 'rgb(255 255 255 / 50%)';
-    textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' || 'rgb(0 0 0 / 50%)';
-    toggleIcon.children[0].textContent = isDark ? 'Dark Mode' || 'Light Mode';
-    isDark? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
+    nav.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
+    textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
+    toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    isDark? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') :
     toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-    isDark? imageMode('dark') || imageMode('light');
+    isDark? imageMode('dark') : imageMode('light');
 }
 
 
@@ -47,6 +47,6 @@ if(currentTheme) {
 
     if(currentTheme === 'dark') {
         toggleSwitch.checked = true;
-        darkMode();
+        toggleDarkLightMode();
     }
 }
